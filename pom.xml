@@ -7,7 +7,13 @@
   <groupId>com.guo.cloud</groupId>
   <artifactId>testSpringCloud</artifactId>
   <version>1.0-SNAPSHOT</version>
+
   <packaging>pom</packaging>
+
+  <modules>
+    <module>cloud-provider-user-8001</module>
+    <module>cloud-consumer-manage-80</module>
+  </modules>
 
   <!-- 统一管理 jar 包版本 -->
   <properties>
