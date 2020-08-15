@@ -20,7 +20,10 @@ import java.util.List;
 @Slf4j
 public class ManageController {
 
-	public static final String USER_URL = "http://localhost:8001";
+	// 单机版时，REST 请求地址，直连的方式请求指定的主机端口
+//	public static final String USER_URL = "http://localhost:8001";
+	// 集群时，REST 请求地址，使用 Eureka 的服务地址，通过 Eureka 来指定具体请求的服务
+	public static final String USER_URL = "http://CLOUD-USER-SERVICE";
 
 	@Resource
 	private RestTemplate restTemplate;
