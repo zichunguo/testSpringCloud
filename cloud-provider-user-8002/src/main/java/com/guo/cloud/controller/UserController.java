@@ -5,6 +5,8 @@ import com.guo.cloud.entities.User;
 import com.guo.cloud.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -20,6 +22,9 @@ public class UserController {
 
 	@Resource
 	private UserService userService;
+
+	@Resource
+	private DiscoveryClient discoveryClient;
 
 	@Value("${server.port}")
 	private String serverPort;
@@ -53,6 +58,20 @@ public class UserController {
 		} else {
 			return new CommonResult(444,"查询失败", null);
 		}
+	}
+
+	@GetMapping("/user/discovery")
+	public Object discovery() {
+		// 注册表中的服务列表
+		List<String> services = discoveryClient.getServices();
+		log.info("services: " + services);
+		// 某一服务中的实例列表
+		List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-USER-SERVICE");
+		log.info("instances: " + instances);
+		for (ServiceInstance instance : instances) {
+			log.info(instance.getServiceId() + "\t" + instance.getHost() + "\t" + instance.getPort() + "\t" + instance.getUri());
+		}
+		return this.discoveryClient;
 	}
 
 }
