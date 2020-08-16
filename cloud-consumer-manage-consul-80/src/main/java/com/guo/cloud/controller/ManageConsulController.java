@@ -20,6 +20,10 @@ public class ManageConsulController {
 	@Resource
 	private RestTemplate restTemplate;
 
+	/**
+	 * 消费方测试接口，获取服务端口
+	 * @return
+	 */
 	@GetMapping("/consumer/user/consul")
 	public String testConsulInfo() {
 		return restTemplate.getForObject(INVOKE_URL + "/user/consul", String.class);

@@ -18,6 +18,10 @@ public class ManageZKController {
 	@Resource
 	private RestTemplate restTemplate;
 
+	/**
+	 * 消费方测试接口，获取服务端口
+	 * @return
+	 */
 	@GetMapping("/consumer/user/zk")
 	public String testZKInfo() {
 		return restTemplate.getForObject(INVOKE_URL + "/user/zk", String.class);
