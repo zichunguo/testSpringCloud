@@ -18,6 +18,10 @@ public class ManageConsulController {
 	@Value("${server.port}")
 	private String serverPort;
 
+	/**
+	 * 测试接口，返回服务端口号
+	 * @return
+	 */
 	@RequestMapping("/user/consul")
 	public String userConsul() {
 		return "SpringCloud with Consul. serverPort: " + serverPort + ". UUID: " + UUID.randomUUID().toString();

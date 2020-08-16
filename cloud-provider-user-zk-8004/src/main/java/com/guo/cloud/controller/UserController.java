@@ -18,6 +18,10 @@ public class UserController {
 	@Value("${server.port}")
 	private String serverPort;
 
+	/**
+	 * 测试接口，返回服务端口号
+	 * @return
+	 */
 	@RequestMapping("/user/zk")
 	public String userZK() {
 		return "SpringCloud with Zookeeper. serverPort: " + serverPort + ". UUID: " + UUID.randomUUID().toString();
