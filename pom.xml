@@ -23,6 +23,7 @@
     <module>cloud-consumer-manage-consul-80</module>
       <module>cloud-provider-test-8101</module>
     <module>cloud-provider-test-8102</module>
+      <module>cloud-consumer-manage-feign-80</module>
   </modules>
 
   <!-- 统一管理 jar 包版本 -->

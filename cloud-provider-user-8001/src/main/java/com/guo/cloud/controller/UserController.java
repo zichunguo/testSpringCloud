@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author guo
@@ -101,4 +102,17 @@ public class UserController {
 		return serverPort;
 	}
 
+	/**
+	 * 测试 feign 请求超时
+	 * @return
+	 */
+	@GetMapping("/user/feign/timeout")
+	public String testFeignTimeout() {
+		try {
+			TimeUnit.SECONDS.sleep(3);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		return serverPort;
+	}
 }
