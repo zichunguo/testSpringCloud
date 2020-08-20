@@ -34,6 +34,8 @@
       <module>cloud-stream-rabbitmq-provider-8801</module>
     <module>cloud-stream-rabbitmq-consumer-8802</module>
     <module>cloud-stream-rabbitmq-consumer-8803</module>
+    <module>cloud-sleuth-provider-8701</module>
+    <module>cloud-sleuth-consumer-8702</module>
   </modules>
 
   <!-- 统一管理 jar 包版本 -->
