@@ -40,6 +40,11 @@
     <module>cloudalibaba-nacos-provider-9002</module>
     <module>cloudalibaba-nacos-consumer-90</module>
     <module>cloudalibaba-nacos-config-client-3399</module>
+    <module>cloudalibaba-sentinel-service-8401</module>
+    <module>cloudalibaba-sentinel-client-84</module>
+    <module>cloudalibaba-provider-user-9003</module>
+    <module>cloudalibaba-provider-user-9004</module>
+    <module>cloudalibaba-consumer-nacos-manage-94</module>
   </modules>
 
   <!-- 统一管理 jar 包版本 -->
@@ -55,7 +60,7 @@
     <mybatis.spring.boot.version>1.3.2</mybatis.spring.boot.version>
     <spring.boot.version>2.2.2.RELEASE</spring.boot.version><!--2.3.2.RELEASE-->
     <spring.cloud.version>Hoxton.SR1</spring.cloud.version><!--Hoxton.SR7-->
-    <spring.cloud.alibaba.version>2.2.1.RELEASE</spring.cloud.alibaba.version><!--2.1.0.RELEASE-->
+    <spring.cloud.alibaba.version>2.1.0.RELEASE</spring.cloud.alibaba.version><!--2.2.1.RELEASE-->
   </properties>
 
   <!-- 子模块继承之后，提供作用：锁定版本；子 module 不用再写 groupId 和 version -->
