@@ -55,4 +55,10 @@ public class OrderServiceImpl implements OrderService {
 
 		log.info("---> 下订单完成. O(∩_∩)O");
 	}
+
+	@Override
+	@GlobalTransactional
+	public void test() {
+		log.info("****** @GlobalTransactional 测试通过 ******");
+	}
 }

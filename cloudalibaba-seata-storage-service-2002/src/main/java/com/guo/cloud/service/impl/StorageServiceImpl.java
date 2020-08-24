@@ -2,6 +2,7 @@ package com.guo.cloud.service.impl;
 
 import com.guo.cloud.dao.StorageDao;
 import com.guo.cloud.service.StorageService;
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -23,5 +24,11 @@ public class StorageServiceImpl implements StorageService {
 		log.info("===> Account Service 扣减库存开始。。。");
 		storageDao.decrease(productId, count);
 		log.info("===> Account Service 扣减库存结束");
+	}
+
+	@Override
+	@GlobalTransactional
+	public void test() {
+		log.info("****** @GlobalTransactional 测试通过 ******");
 	}
 }

@@ -18,10 +18,17 @@ public class OrderController {
 	@Resource
 	private OrderService orderService;
 
+	// 测试：http://localhost:2001/order/create?userId=1&productId=1&count=10&money=100
 	@GetMapping("/order/create")
 	public CommonResult create(Order order) {
 		orderService.create(order);
 		return new CommonResult(200, "订单创建成功");
+	}
+
+	@GetMapping("/tx/test")
+	public String test() {
+		orderService.test();
+		return "^_^";
 	}
 
 }

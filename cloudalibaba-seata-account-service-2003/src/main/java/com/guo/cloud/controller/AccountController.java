@@ -24,4 +24,10 @@ public class AccountController {
 		accountService.decrease(userId, money);
 		return new CommonResult(200, "扣减账户余额成功");
 	}
+
+	@GetMapping("/tx/test")
+	public String test() {
+		accountService.test();
+		return "^_^";
+	}
 }

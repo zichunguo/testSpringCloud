@@ -23,4 +23,10 @@ public class StorageController {
 		storageService.decrease(productId, count);
 		return new CommonResult(200, "扣减库存成功");
 	}
+
+	@GetMapping("/tx/test")
+	public String test() {
+		storageService.test();
+		return "^_^";
+	}
 }

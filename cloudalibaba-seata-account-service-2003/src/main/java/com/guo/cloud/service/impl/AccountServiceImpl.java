@@ -2,6 +2,7 @@ package com.guo.cloud.service.impl;
 
 import com.guo.cloud.dao.AccountDao;
 import com.guo.cloud.service.AccountService;
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -32,5 +33,11 @@ public class AccountServiceImpl implements AccountService {
 		accountDao.decrease(userId, money);
 //		int i = 10 / 0;
 		log.info("***> Account Service 扣减账户余额结束");
+	}
+
+	@Override
+	@GlobalTransactional
+	public void test() {
+		log.info("****** @GlobalTransactional 测试通过 ******");
 	}
 }
