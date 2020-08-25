@@ -21,16 +21,22 @@ public class AccountServiceImpl implements AccountService {
 	@Resource
 	private AccountDao accountDao;
 
+	/**
+	 * 扣减账户余额
+	 * @param userId
+	 * @param money
+	 */
 	@Override
 	public void decrease(Long userId, BigDecimal money) {
 		log.info("***> Account Service 扣减账户余额开始。。。");
-		// 测试超时
-		try {
-			TimeUnit.SECONDS.sleep(20);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		// 模拟超时异常，全局事务回滚
+//		try {
+//			TimeUnit.SECONDS.sleep(20);
+//		} catch (InterruptedException e) {
+//			e.printStackTrace();
+//		}
 		accountDao.decrease(userId, money);
+		// 模拟异常，全局事务回滚
 //		int i = 10 / 0;
 		log.info("***> Account Service 扣减账户余额结束");
 	}
