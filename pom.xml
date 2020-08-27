@@ -48,6 +48,9 @@
     <module>cloudalibaba-seata-order-service-2001</module>
     <module>cloudalibaba-seata-storage-service-2002</module>
     <module>cloudalibaba-seata-account-service-2003</module>
+    <module>cloud-txlcn-tm-7970</module>
+    <module>cloud-txlcn-tc-order-8071</module>
+    <module>cloud-txlcn-tc-payment-8072</module>
   </modules>
 
   <!-- 统一管理 jar 包版本 -->
